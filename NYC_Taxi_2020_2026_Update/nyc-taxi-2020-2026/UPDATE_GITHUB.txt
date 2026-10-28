@@ -1,0 +1,29 @@
+UPDATE YOUR EXISTING WEBSITE
+
+1. Unzip NYC_Taxi_2020_2026_Update.zip.
+2. Open the extracted folder. Preview the page by opening docs/index.html.
+3. On GitHub, open your existing repository and click Code (the tab).
+4. From the repository's top level, choose Add file > Upload files.
+5. Drag the entire docs folder from this new package into the upload area.
+   Do not upload the ZIP or its outer folder. Do not upload docs inside docs.
+6. Commit directly to main with a message such as Update dashboard to 2020-2026.
+7. Wait for the Pages deployment to finish, then refresh your website.
+   Keep Settings > Pages set to main and /docs.
+8. To update the code and downloadable summaries in your repository too, upload
+   src, data, requirements.txt and README.md from the top level in another batch.
+   Existing files at the same paths are updated. Old unused files may remain;
+   the new dashboard does not reference them.
+
+No Python installation is needed to publish these prepared files.
+All files in this compact package are below 25 MiB.
+The Python scripts download the original trip-level data when you want to rerun
+or extend the analysis. CSV summary data are already included.
+
+FILTERS
+Each section has independent controls. A year or borough choice changes only
+that section. The cards have their own filters; the monthly table has its own.
+Choose All years for combined totals or zone rankings across 2020-2026.
+The annual chart can display fares, passenger charges, trips or average fare.
+Use Jan-Aug each year for a comparison with matching calendar coverage.
+
+2020-2026 includes seven years. 2026 includes January-August only.
