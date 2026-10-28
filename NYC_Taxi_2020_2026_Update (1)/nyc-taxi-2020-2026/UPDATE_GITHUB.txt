@@ -1,0 +1,20 @@
+CORRECTED YEARLY DASHBOARD — VERSION 2
+
+1. Download this ZIP again and extract it into a NEW folder.
+2. Open docs/index.html to preview. The badge says 2020–2026, and the footer says Version 2.
+3. On GitHub, open your EXISTING repository, then click the docs folder.
+4. Click Add file > Upload files while INSIDE docs.
+5. Drag ONLY index.html from this package's docs folder into the upload area.
+6. Commit directly to main. This replaces docs/index.html at its existing path.
+7. Wait for the Pages deployment to complete. Open your site and hard-refresh:
+   Windows: Ctrl+Shift+R. Mac: Command+Shift+R.
+8. Check for 2020–2026 at the top, Top drop-off zones, and seven yearly table rows.
+
+Do not upload the outer folder, the ZIP, or another docs folder inside docs.
+This index.html contains its own design, code and data, so old app.js/data.js
+files cannot cause it to display the old dashboard.
+For the optional CSV download links, upload the exports folder from this
+package into the existing GitHub docs folder as well.
+The live site is not changed until the replacement is committed and deployed.
+
+The complete source and summary data are included in this package.
