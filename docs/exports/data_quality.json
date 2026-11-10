@@ -1,0 +1,1303 @@
+{
+  "coverage_start": "2020-01-01",
+  "coverage_end": "2026-08-31",
+  "raw_rows": 6019100,
+  "included_rows": 4757732,
+  "excluded_rows": 1261368,
+  "source_columns": 22,
+  "monthly_files": 80,
+  "months": [
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08",
+    "2020-09",
+    "2020-10",
+    "2020-11",
+    "2020-12",
+    "2021-01",
+    "2021-02",
+    "2021-03",
+    "2021-04",
+    "2021-05",
+    "2021-06",
+    "2021-07",
+    "2021-08",
+    "2021-09",
+    "2021-10",
+    "2021-11",
+    "2021-12",
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "fare_cents": 7596636942,
+  "charges_cents": 9769387626,
+  "audit_by_month": [
+    {
+      "month": "2020-01",
+      "raw_rows": 447770,
+      "included_rows": 328415,
+      "excluded_rows": 119355,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 328415,
+        "Payment is not card or cash": 118338,
+        "Nonpositive or missing fare / total": 964,
+        "Pickup outside source month or missing": 53
+      },
+      "sha256": "f35e911dfcfd77153e81ca52a8ed3ec599b55e0bcf03a970e32440fbed314548",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-01.parquet"
+    },
+    {
+      "month": "2020-02",
+      "raw_rows": 398632,
+      "included_rows": 314511,
+      "excluded_rows": 84121,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 314511,
+        "Payment is not card or cash": 83253,
+        "Nonpositive or missing fare / total": 843,
+        "Pickup outside source month or missing": 25
+      },
+      "sha256": "7952af4424e0b0cc233019bf0062a1168fcd76909ce76e347a1ff99653be361e",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-02.parquet"
+    },
+    {
+      "month": "2020-03",
+      "raw_rows": 223496,
+      "included_rows": 174257,
+      "excluded_rows": 49239,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 174257,
+        "Payment is not card or cash": 48705,
+        "Nonpositive or missing fare / total": 512,
+        "Pickup outside source month or missing": 22
+      },
+      "sha256": "13c259492c0f95e188e49255505961b6be4e2115f80e2d319ef06af510ee4b34",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-03.parquet"
+    },
+    {
+      "month": "2020-04",
+      "raw_rows": 35644,
+      "included_rows": 24192,
+      "excluded_rows": 11452,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 24192,
+        "Payment is not card or cash": 11416,
+        "Nonpositive or missing fare / total": 30,
+        "Pickup outside source month or missing": 6
+      },
+      "sha256": "3028f4203882cd81412a68512b44501e6de547a78e905ea0e07b94e79c98338c",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-04.parquet"
+    },
+    {
+      "month": "2020-05",
+      "raw_rows": 57361,
+      "included_rows": 30778,
+      "excluded_rows": 26583,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 30778,
+        "Payment is not card or cash": 26410,
+        "Nonpositive or missing fare / total": 173
+      },
+      "sha256": "728fdde375a8552a3d3b812a23513870953841e5bd48cbea84f5334c5ca214f0",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-05.parquet"
+    },
+    {
+      "month": "2020-06",
+      "raw_rows": 63110,
+      "included_rows": 37909,
+      "excluded_rows": 25201,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 37909,
+        "Payment is not card or cash": 25105,
+        "Nonpositive or missing fare / total": 94,
+        "Pickup outside source month or missing": 2
+      },
+      "sha256": "200a5528226012d3b21afadcb2fd8ccd160fbf2eedf9b5e24c4d0dec746f7f37",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-06.parquet"
+    },
+    {
+      "month": "2020-07",
+      "raw_rows": 72258,
+      "included_rows": 42730,
+      "excluded_rows": 29528,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 42730,
+        "Payment is not card or cash": 29411,
+        "Nonpositive or missing fare / total": 111,
+        "Pickup outside source month or missing": 6
+      },
+      "sha256": "c81164436bf0cb2464cb19ad46d0177fb4d06d74b9c95609c551cab15500a1dd",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-07.parquet"
+    },
+    {
+      "month": "2020-08",
+      "raw_rows": 81063,
+      "included_rows": 46174,
+      "excluded_rows": 34889,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 46174,
+        "Payment is not card or cash": 34767,
+        "Nonpositive or missing fare / total": 119,
+        "Pickup outside source month or missing": 3
+      },
+      "sha256": "e85f4eefccb6a9714a88f666e8d552696c8fd37a7255531575552b4615d314e6",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-08.parquet"
+    },
+    {
+      "month": "2020-09",
+      "raw_rows": 87987,
+      "included_rows": 48034,
+      "excluded_rows": 39953,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 48034,
+        "Payment is not card or cash": 39805,
+        "Nonpositive or missing fare / total": 139,
+        "Pickup outside source month or missing": 9
+      },
+      "sha256": "4e7a679be073190d936036f1f02ad507ebbc3cd57af5d6bc689a59dc170cfc3b",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-09.parquet"
+    },
+    {
+      "month": "2020-10",
+      "raw_rows": 95120,
+      "included_rows": 51719,
+      "excluded_rows": 43401,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 51719,
+        "Payment is not card or cash": 43001,
+        "Nonpositive or missing fare / total": 391,
+        "Pickup outside source month or missing": 9
+      },
+      "sha256": "721526001904a758604d2451d85fd8f0bc072e674125cbb21a86cae88c0d426d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-10.parquet"
+    },
+    {
+      "month": "2020-11",
+      "raw_rows": 88605,
+      "included_rows": 47678,
+      "excluded_rows": 40927,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 47678,
+        "Payment is not card or cash": 40578,
+        "Nonpositive or missing fare / total": 347,
+        "Pickup outside source month or missing": 2
+      },
+      "sha256": "4f485a3464e6ca71c51da64425cd82ad5fbf39825630126e097c8320783cbb6c",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-11.parquet"
+    },
+    {
+      "month": "2020-12",
+      "raw_rows": 83130,
+      "included_rows": 45543,
+      "excluded_rows": 37587,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 45543,
+        "Payment is not card or cash": 37258,
+        "Nonpositive or missing fare / total": 326,
+        "Pickup outside source month or missing": 3
+      },
+      "sha256": "4adc433ae3504e5bac2e2d51aa925c38b40a09ae5f7283372fca00706713d14c",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-12.parquet"
+    },
+    {
+      "month": "2021-01",
+      "raw_rows": 76518,
+      "included_rows": 39974,
+      "excluded_rows": 36544,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 39974,
+        "Payment is not card or cash": 36399,
+        "Nonpositive or missing fare / total": 142,
+        "Pickup outside source month or missing": 3
+      },
+      "sha256": "b8e2c9496c5eada0f10adbd88f98d91721ec6fe2787a2b355cf0ccfa9678ee7b",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-01.parquet"
+    },
+    {
+      "month": "2021-02",
+      "raw_rows": 64572,
+      "included_rows": 35065,
+      "excluded_rows": 29507,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 35065,
+        "Payment is not card or cash": 29398,
+        "Nonpositive or missing fare / total": 107,
+        "Pickup outside source month or missing": 2
+      },
+      "sha256": "fd43c7afa2002716c8afadfd57665ab9c9ad99be419570a9b0a08de15cbeb64e",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-02.parquet"
+    },
+    {
+      "month": "2021-03",
+      "raw_rows": 83827,
+      "included_rows": 42759,
+      "excluded_rows": 41068,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 42759,
+        "Payment is not card or cash": 40921,
+        "Nonpositive or missing fare / total": 147
+      },
+      "sha256": "78847a2e0ccb58202eef3337903e696317656815f50423733ad3099dabc58a9d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-03.parquet"
+    },
+    {
+      "month": "2021-04",
+      "raw_rows": 86941,
+      "included_rows": 45169,
+      "excluded_rows": 41772,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 45169,
+        "Payment is not card or cash": 41389,
+        "Nonpositive or missing fare / total": 370,
+        "Pickup outside source month or missing": 13
+      },
+      "sha256": "97fe4a2885411d52f63fd1b276ec115e84338e33719824c28d933088d86f1131",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-04.parquet"
+    },
+    {
+      "month": "2021-05",
+      "raw_rows": 88180,
+      "included_rows": 49846,
+      "excluded_rows": 38334,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 49846,
+        "Payment is not card or cash": 38054,
+        "Nonpositive or missing fare / total": 273,
+        "Pickup outside source month or missing": 7
+      },
+      "sha256": "588dcc95e3c2bd37d1ca4321291900ef63b7cd094a8e4f51268d4be76d0f23bc",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-05.parquet"
+    },
+    {
+      "month": "2021-06",
+      "raw_rows": 86737,
+      "included_rows": 53894,
+      "excluded_rows": 32843,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 53894,
+        "Payment is not card or cash": 32701,
+        "Nonpositive or missing fare / total": 140,
+        "Pickup outside source month or missing": 2
+      },
+      "sha256": "aec3c6c031fd6ee8550d3217097850bb68721b07a34655019b122f3e87f3142c",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-06.parquet"
+    },
+    {
+      "month": "2021-07",
+      "raw_rows": 83691,
+      "included_rows": 50511,
+      "excluded_rows": 33180,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 50511,
+        "Payment is not card or cash": 32870,
+        "Nonpositive or missing fare / total": 292,
+        "Pickup outside source month or missing": 18
+      },
+      "sha256": "5ca9f79373dd917d6cda921a880f8361bebdbe67939c5f0c6bb7a6bc5ad326f8",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-07.parquet"
+    },
+    {
+      "month": "2021-08",
+      "raw_rows": 83499,
+      "included_rows": 49721,
+      "excluded_rows": 33778,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 49721,
+        "Payment is not card or cash": 33395,
+        "Nonpositive or missing fare / total": 373,
+        "Pickup outside source month or missing": 10
+      },
+      "sha256": "67c3727bf72ef98458c8056174d67cc8fd76551aeac893b9c0c9ff0de9c42299",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-08.parquet"
+    },
+    {
+      "month": "2021-09",
+      "raw_rows": 95709,
+      "included_rows": 60501,
+      "excluded_rows": 35208,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 60501,
+        "Payment is not card or cash": 34861,
+        "Nonpositive or missing fare / total": 340,
+        "Pickup outside source month or missing": 7
+      },
+      "sha256": "1e12d9f65b08c8c4a5083bc3dcb5729bf0762c7034508ceff566238f3fc1b49d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-09.parquet"
+    },
+    {
+      "month": "2021-10",
+      "raw_rows": 110891,
+      "included_rows": 73499,
+      "excluded_rows": 37392,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 73499,
+        "Payment is not card or cash": 37175,
+        "Nonpositive or missing fare / total": 210,
+        "Pickup outside source month or missing": 7
+      },
+      "sha256": "dd6ced36a7d5af1e42ea0d26cdd2e8b5380d45a23b2f6910d9623ece4ddfa3db",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-10.parquet"
+    },
+    {
+      "month": "2021-11",
+      "raw_rows": 108229,
+      "included_rows": 73669,
+      "excluded_rows": 34560,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 73669,
+        "Payment is not card or cash": 34419,
+        "Nonpositive or missing fare / total": 134,
+        "Pickup outside source month or missing": 7
+      },
+      "sha256": "ffc9ea7a42746910a833f67d5b8ac3aa13683c56ae4fa07ac48f375fc47b756e",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-11.parquet"
+    },
+    {
+      "month": "2021-12",
+      "raw_rows": 99961,
+      "included_rows": 73979,
+      "excluded_rows": 25982,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 73979,
+        "Payment is not card or cash": 25842,
+        "Nonpositive or missing fare / total": 134,
+        "Pickup outside source month or missing": 6
+      },
+      "sha256": "8643733380ea7d0272e256a459bf91e1be720da1ab2819cb152f66feb7a89b5f",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2021-12.parquet"
+    },
+    {
+      "month": "2022-01",
+      "raw_rows": 62495,
+      "included_rows": 55655,
+      "excluded_rows": 6840,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 55655,
+        "Payment is not card or cash": 6749,
+        "Nonpositive or missing fare / total": 87,
+        "Pickup outside source month or missing": 4
+      },
+      "sha256": "6a9efa68165ed2c52ec130cc9d8098b9e8a876f4316c17ddcbc170e46c45ad1d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-01.parquet"
+    },
+    {
+      "month": "2022-02",
+      "raw_rows": 69399,
+      "included_rows": 61391,
+      "excluded_rows": 8008,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 61391,
+        "Payment is not card or cash": 7845,
+        "Nonpositive or missing fare / total": 140,
+        "Pickup outside source month or missing": 23
+      },
+      "sha256": "4e2fb2eb988955311e2110475eb32308ed2b2a1d601dca73965f3adf731245c4",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-02.parquet"
+    },
+    {
+      "month": "2022-03",
+      "raw_rows": 78537,
+      "included_rows": 69826,
+      "excluded_rows": 8711,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 69826,
+        "Payment is not card or cash": 8529,
+        "Nonpositive or missing fare / total": 158,
+        "Pickup outside source month or missing": 24
+      },
+      "sha256": "3911283dcf1cf9f705871aa7b5fee94ca58404a068289e1f4d4937e05ebb1af5",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-03.parquet"
+    },
+    {
+      "month": "2022-04",
+      "raw_rows": 76136,
+      "included_rows": 66705,
+      "excluded_rows": 9431,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 66705,
+        "Payment is not card or cash": 9277,
+        "Nonpositive or missing fare / total": 119,
+        "Pickup outside source month or missing": 35
+      },
+      "sha256": "7130684b8ae13b756f955750f63afb165b290a17e8b94599b22ee09cf1d7e009",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-04.parquet"
+    },
+    {
+      "month": "2022-05",
+      "raw_rows": 76891,
+      "included_rows": 65913,
+      "excluded_rows": 10978,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 65913,
+        "Payment is not card or cash": 10827,
+        "Nonpositive or missing fare / total": 134,
+        "Pickup outside source month or missing": 17
+      },
+      "sha256": "49016a356c180627a2af0d5198ce15072fe0706af32bc89c1e514e3b20bc171e",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-05.parquet"
+    },
+    {
+      "month": "2022-06",
+      "raw_rows": 73718,
+      "included_rows": 63840,
+      "excluded_rows": 9878,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 63840,
+        "Payment is not card or cash": 9679,
+        "Nonpositive or missing fare / total": 190,
+        "Pickup outside source month or missing": 9
+      },
+      "sha256": "aff33acd19f584859b50545f6c3d2005fea895edf9bf53d49b6701e9df1230cb",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-06.parquet"
+    },
+    {
+      "month": "2022-07",
+      "raw_rows": 64192,
+      "included_rows": 57027,
+      "excluded_rows": 7165,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 57027,
+        "Payment is not card or cash": 7084,
+        "Nonpositive or missing fare / total": 77,
+        "Pickup outside source month or missing": 4
+      },
+      "sha256": "b027040a9466098ff2b4309fbccf3077421ac30559aa91ea9437168fb0941bd3",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-07.parquet"
+    },
+    {
+      "month": "2022-08",
+      "raw_rows": 65929,
+      "included_rows": 59522,
+      "excluded_rows": 6407,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 59522,
+        "Payment is not card or cash": 6301,
+        "Nonpositive or missing fare / total": 92,
+        "Pickup outside source month or missing": 14
+      },
+      "sha256": "f50e2ea441d095de7726feda8a3e2412ea3c17d6f3363c12e676df107b140456",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-08.parquet"
+    },
+    {
+      "month": "2022-09",
+      "raw_rows": 69031,
+      "included_rows": 61342,
+      "excluded_rows": 7689,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 61342,
+        "Payment is not card or cash": 7609,
+        "Nonpositive or missing fare / total": 65,
+        "Pickup outside source month or missing": 15
+      },
+      "sha256": "e80997b307f017772b1c42a348893f639c691f7979df01128033582fd95e1a08",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-09.parquet"
+    },
+    {
+      "month": "2022-10",
+      "raw_rows": 69322,
+      "included_rows": 61697,
+      "excluded_rows": 7625,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 61697,
+        "Payment is not card or cash": 7530,
+        "Nonpositive or missing fare / total": 82,
+        "Pickup outside source month or missing": 13
+      },
+      "sha256": "c58c0f3ccf69fbcbf943b657c72e2e0d78dab992d6ecbe602f5a82867858ea52",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-10.parquet"
+    },
+    {
+      "month": "2022-11",
+      "raw_rows": 62313,
+      "included_rows": 55587,
+      "excluded_rows": 6726,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 55587,
+        "Payment is not card or cash": 6607,
+        "Nonpositive or missing fare / total": 95,
+        "Pickup outside source month or missing": 24
+      },
+      "sha256": "ea09e0cca3b531d8f592c8b68b41ca1b39b265f22b0226e4e91de764f7200404",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-11.parquet"
+    },
+    {
+      "month": "2022-12",
+      "raw_rows": 72439,
+      "included_rows": 64579,
+      "excluded_rows": 7860,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 64579,
+        "Payment is not card or cash": 7719,
+        "Nonpositive or missing fare / total": 125,
+        "Pickup outside source month or missing": 16
+      },
+      "sha256": "6ef1794f9d940579afe0d70a9b91c25c5e5021b8994cd7f6c387a991ca57677d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022-12.parquet"
+    },
+    {
+      "month": "2023-01",
+      "raw_rows": 68211,
+      "included_rows": 63235,
+      "excluded_rows": 4976,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 63235,
+        "Payment is not card or cash": 4893,
+        "Nonpositive or missing fare / total": 79,
+        "Pickup outside source month or missing": 4
+      },
+      "sha256": "9f0e03dd7f8f94ecc15949cdbfd2a4e1fc9ebb41a11882215158c9fc95012e31",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-01.parquet"
+    },
+    {
+      "month": "2023-02",
+      "raw_rows": 64809,
+      "included_rows": 59281,
+      "excluded_rows": 5528,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 59281,
+        "Payment is not card or cash": 5416,
+        "Nonpositive or missing fare / total": 86,
+        "Pickup outside source month or missing": 26
+      },
+      "sha256": "bcc2821d639197cbb09aeb8994121a7004f2a6568a64bf4839015db802f62743",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-02.parquet"
+    },
+    {
+      "month": "2023-03",
+      "raw_rows": 72044,
+      "included_rows": 66786,
+      "excluded_rows": 5258,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 66786,
+        "Payment is not card or cash": 5178,
+        "Nonpositive or missing fare / total": 71,
+        "Pickup outside source month or missing": 9
+      },
+      "sha256": "69ab2c3b515ad1dd686a8ac3375370b8a44b003d95d340655d94828db0681d9d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-03.parquet"
+    },
+    {
+      "month": "2023-04",
+      "raw_rows": 65392,
+      "included_rows": 60297,
+      "excluded_rows": 5095,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 60297,
+        "Payment is not card or cash": 5027,
+        "Nonpositive or missing fare / total": 65,
+        "Pickup outside source month or missing": 3
+      },
+      "sha256": "d28bf0485ac095e923c736180cf1b4fb247fdbcee1ae6d77eb78e7a185b7aacf",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-04.parquet"
+    },
+    {
+      "month": "2023-05",
+      "raw_rows": 69174,
+      "included_rows": 63802,
+      "excluded_rows": 5372,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 63802,
+        "Payment is not card or cash": 5277,
+        "Nonpositive or missing fare / total": 89,
+        "Pickup outside source month or missing": 6
+      },
+      "sha256": "8545a8510b2f33e4bec7a2e12f9ff1f83752bb6a976dfbbc347b4fb7ae28eb2d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-05.parquet"
+    },
+    {
+      "month": "2023-06",
+      "raw_rows": 65550,
+      "included_rows": 59758,
+      "excluded_rows": 5792,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 59758,
+        "Payment is not card or cash": 5701,
+        "Nonpositive or missing fare / total": 79,
+        "Pickup outside source month or missing": 12
+      },
+      "sha256": "8f24ad7786b81240d39c87fb3d13a90a5d62e417a3a1dbbe6f55f933b181c02f",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-06.parquet"
+    },
+    {
+      "month": "2023-07",
+      "raw_rows": 61343,
+      "included_rows": 55959,
+      "excluded_rows": 5384,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 55959,
+        "Payment is not card or cash": 5314,
+        "Nonpositive or missing fare / total": 61,
+        "Pickup outside source month or missing": 9
+      },
+      "sha256": "a5063fa42a5d40aaa965d26033568d75cec3771069203bc286536df36e83d26f",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-07.parquet"
+    },
+    {
+      "month": "2023-08",
+      "raw_rows": 60649,
+      "included_rows": 56055,
+      "excluded_rows": 4594,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 56055,
+        "Payment is not card or cash": 4535,
+        "Nonpositive or missing fare / total": 48,
+        "Pickup outside source month or missing": 11
+      },
+      "sha256": "814047ade6975e67c39b5bffeba304386be258ebef7adbcc572019e35128f13c",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-08.parquet"
+    },
+    {
+      "month": "2023-09",
+      "raw_rows": 65471,
+      "included_rows": 60063,
+      "excluded_rows": 5408,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 60063,
+        "Payment is not card or cash": 5297,
+        "Nonpositive or missing fare / total": 73,
+        "Pickup outside source month or missing": 38
+      },
+      "sha256": "d5fa110f59c10387fc2e4d3bbc4edd572291392bc209f972ce52387a8dd81c90",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-09.parquet"
+    },
+    {
+      "month": "2023-10",
+      "raw_rows": 66177,
+      "included_rows": 60830,
+      "excluded_rows": 5347,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 60830,
+        "Payment is not card or cash": 5291,
+        "Nonpositive or missing fare / total": 51,
+        "Pickup outside source month or missing": 5
+      },
+      "sha256": "2ef902d6c0aa5e17f2feb32e8356db9df7e8cd0110519bcd3bc31f4c35bf6a40",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-10.parquet"
+    },
+    {
+      "month": "2023-11",
+      "raw_rows": 64025,
+      "included_rows": 58664,
+      "excluded_rows": 5361,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 58664,
+        "Payment is not card or cash": 5303,
+        "Nonpositive or missing fare / total": 44,
+        "Pickup outside source month or missing": 14
+      },
+      "sha256": "5b117ff8ee0efe0cf532021588cad7d79c477e6fee3d3a6fb42b6140d4675fbf",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-11.parquet"
+    },
+    {
+      "month": "2023-12",
+      "raw_rows": 64215,
+      "included_rows": 58657,
+      "excluded_rows": 5558,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 58657,
+        "Payment is not card or cash": 5523,
+        "Nonpositive or missing fare / total": 31,
+        "Pickup outside source month or missing": 4
+      },
+      "sha256": "1c43ac95b8b416293ab0b2953824ee5321443fc4c47e4236f295424e48e7aea3",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2023-12.parquet"
+    },
+    {
+      "month": "2024-01",
+      "raw_rows": 56551,
+      "included_rows": 52528,
+      "excluded_rows": 4023,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 52528,
+        "Payment is not card or cash": 3978,
+        "Nonpositive or missing fare / total": 43,
+        "Pickup outside source month or missing": 2
+      },
+      "sha256": "1512a953bed564ac68dcb622827424dfb4f68ad93c2a4572e50ef6ab0b09c1ad",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-01.parquet"
+    },
+    {
+      "month": "2024-02",
+      "raw_rows": 53577,
+      "included_rows": 50132,
+      "excluded_rows": 3445,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 50132,
+        "Payment is not card or cash": 3416,
+        "Nonpositive or missing fare / total": 23,
+        "Pickup outside source month or missing": 6
+      },
+      "sha256": "cb7eb405ee7e795c9fd6b8ad1b291f46f4e0a1cd60a57067b0aaca2420e8bc5d",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-02.parquet"
+    },
+    {
+      "month": "2024-03",
+      "raw_rows": 57457,
+      "included_rows": 54822,
+      "excluded_rows": 2635,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 54822,
+        "Payment is not card or cash": 2598,
+        "Nonpositive or missing fare / total": 27,
+        "Pickup outside source month or missing": 10
+      },
+      "sha256": "43dedd66dd556acfc38da679a174b6adc32e01dd6dccad14bdfdf1521a14abed",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-03.parquet"
+    },
+    {
+      "month": "2024-04",
+      "raw_rows": 56471,
+      "included_rows": 53884,
+      "excluded_rows": 2587,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 53884,
+        "Payment is not card or cash": 2538,
+        "Nonpositive or missing fare / total": 45,
+        "Pickup outside source month or missing": 4
+      },
+      "sha256": "af174977258a02f8f44c37534abc9a8b4eaa5ec6d2f9c2bc49782327628b608c",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-04.parquet"
+    },
+    {
+      "month": "2024-05",
+      "raw_rows": 61003,
+      "included_rows": 58465,
+      "excluded_rows": 2538,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 58465,
+        "Payment is not card or cash": 2491,
+        "Nonpositive or missing fare / total": 38,
+        "Pickup outside source month or missing": 9
+      },
+      "sha256": "aa8b1965ed36f0bda1b342930d5e6f5a89f8fe56d0c6c6d77d9c156b408aa0ea",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-05.parquet"
+    },
+    {
+      "month": "2024-06",
+      "raw_rows": 54748,
+      "included_rows": 52298,
+      "excluded_rows": 2450,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 52298,
+        "Payment is not card or cash": 2420,
+        "Nonpositive or missing fare / total": 17,
+        "Pickup outside source month or missing": 13
+      },
+      "sha256": "47e7c37dd39069c474364aee3d76c9ddc887a3f714e9bb550b5866fe0b89b9cd",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-06.parquet"
+    },
+    {
+      "month": "2024-07",
+      "raw_rows": 51837,
+      "included_rows": 49672,
+      "excluded_rows": 2165,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 49672,
+        "Payment is not card or cash": 2118,
+        "Pickup outside source month or missing": 26,
+        "Nonpositive or missing fare / total": 21
+      },
+      "sha256": "ce0d7591316050bea21da49e383eb733411e98ae17e114afcc7fbe4b36b116f2",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-07.parquet"
+    },
+    {
+      "month": "2024-08",
+      "raw_rows": 51771,
+      "included_rows": 49583,
+      "excluded_rows": 2188,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 49583,
+        "Payment is not card or cash": 2148,
+        "Pickup outside source month or missing": 20,
+        "Nonpositive or missing fare / total": 20
+      },
+      "sha256": "733210fb27cbe8cf8b0ad9f5d6fff03dfafcc8ff7c2beb1c1b707825d72f0376",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-08.parquet"
+    },
+    {
+      "month": "2024-09",
+      "raw_rows": 54440,
+      "included_rows": 52160,
+      "excluded_rows": 2280,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 52160,
+        "Payment is not card or cash": 2206,
+        "Nonpositive or missing fare / total": 40,
+        "Pickup outside source month or missing": 34
+      },
+      "sha256": "8f6aa8f3e8a2040fc161c7fbcb60e5418238b27e7e95998363572a4c977b69ce",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-09.parquet"
+    },
+    {
+      "month": "2024-10",
+      "raw_rows": 56147,
+      "included_rows": 53993,
+      "excluded_rows": 2154,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 53993,
+        "Payment is not card or cash": 2113,
+        "Nonpositive or missing fare / total": 34,
+        "Pickup outside source month or missing": 7
+      },
+      "sha256": "6e737b7c4edac91f865aa210f7110d0118a9992b3a96720936e090277c24edaa",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-10.parquet"
+    },
+    {
+      "month": "2024-11",
+      "raw_rows": 52222,
+      "included_rows": 50185,
+      "excluded_rows": 2037,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 50185,
+        "Payment is not card or cash": 2013,
+        "Pickup outside source month or missing": 15,
+        "Nonpositive or missing fare / total": 9
+      },
+      "sha256": "fde255b43d4158124921b7c085d9abf15de5c5a9128c2ce0fb4e2372bc1e0d4a",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-11.parquet"
+    },
+    {
+      "month": "2024-12",
+      "raw_rows": 53994,
+      "included_rows": 51479,
+      "excluded_rows": 2515,
+      "source_columns": 20,
+      "exclusion_counts": {
+        "Included": 51479,
+        "Payment is not card or cash": 2475,
+        "Nonpositive or missing fare / total": 22,
+        "Pickup outside source month or missing": 18
+      },
+      "sha256": "1d708f58d29b0795a54ca11a36db6df61262986d122985f0fb52a56acc064bac",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2024-12.parquet"
+    },
+    {
+      "month": "2025-01",
+      "raw_rows": 48326,
+      "included_rows": 45991,
+      "excluded_rows": 2335,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 45991,
+        "Payment is not card or cash": 2265,
+        "Pickup outside source month or missing": 43,
+        "Nonpositive or missing fare / total": 27
+      },
+      "sha256": "84f3a121667157efcbf012c3566a6065df6f8e0312c678cb2f29cd72cc9c0f10",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-01.parquet"
+    },
+    {
+      "month": "2025-02",
+      "raw_rows": 46621,
+      "included_rows": 43608,
+      "excluded_rows": 3013,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 43608,
+        "Payment is not card or cash": 2974,
+        "Nonpositive or missing fare / total": 20,
+        "Pickup outside source month or missing": 19
+      },
+      "sha256": "b3ffe16a96ba0c68c8a8f8b10f049294ae6eb8d21f2e13b3fdbd452fa2e3498e",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-02.parquet"
+    },
+    {
+      "month": "2025-03",
+      "raw_rows": 51539,
+      "included_rows": 47477,
+      "excluded_rows": 4062,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 47477,
+        "Payment is not card or cash": 4030,
+        "Nonpositive or missing fare / total": 21,
+        "Pickup outside source month or missing": 11
+      },
+      "sha256": "d58e8d08e5e8a34c12f0d3f5ea049ae25c7c8215218a6af7bf6b8124ecde1c79",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-03.parquet"
+    },
+    {
+      "month": "2025-04",
+      "raw_rows": 52132,
+      "included_rows": 48509,
+      "excluded_rows": 3623,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 48509,
+        "Payment is not card or cash": 3594,
+        "Nonpositive or missing fare / total": 17,
+        "Pickup outside source month or missing": 12
+      },
+      "sha256": "6cf7ca2a4dd8907437e2e4b4728f62b353712ff09b322223a61e01aecee02411",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-04.parquet"
+    },
+    {
+      "month": "2025-05",
+      "raw_rows": 55399,
+      "included_rows": 51604,
+      "excluded_rows": 3795,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 51604,
+        "Payment is not card or cash": 3758,
+        "Nonpositive or missing fare / total": 27,
+        "Pickup outside source month or missing": 10
+      },
+      "sha256": "dcbf4afce26d1adc544a89ee1bdac88089b1bbaa300685144d31eee646da58bb",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-05.parquet"
+    },
+    {
+      "month": "2025-06",
+      "raw_rows": 49390,
+      "included_rows": 45121,
+      "excluded_rows": 4269,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 45121,
+        "Payment is not card or cash": 4238,
+        "Pickup outside source month or missing": 16,
+        "Nonpositive or missing fare / total": 15
+      },
+      "sha256": "451bc9f29382cca5dc33db05ff399cb137735d19c7449bbaa8b3348b0824f8e3",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-06.parquet"
+    },
+    {
+      "month": "2025-07",
+      "raw_rows": 48205,
+      "included_rows": 42595,
+      "excluded_rows": 5610,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 42595,
+        "Payment is not card or cash": 5585,
+        "Pickup outside source month or missing": 13,
+        "Nonpositive or missing fare / total": 12
+      },
+      "sha256": "bbd6f9e5955570521df5c6dd40c1a75b37cccd730fcaff4fb50bcd32d2d35f69",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-07.parquet"
+    },
+    {
+      "month": "2025-08",
+      "raw_rows": 46306,
+      "included_rows": 41105,
+      "excluded_rows": 5201,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 41105,
+        "Payment is not card or cash": 5148,
+        "Nonpositive or missing fare / total": 30,
+        "Pickup outside source month or missing": 23
+      },
+      "sha256": "ebaab192c199b850b0244e10c90622e472c1d4f2851168f950c9f75fe8db18d1",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-08.parquet"
+    },
+    {
+      "month": "2025-09",
+      "raw_rows": 48893,
+      "included_rows": 43108,
+      "excluded_rows": 5785,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 43108,
+        "Payment is not card or cash": 5735,
+        "Pickup outside source month or missing": 33,
+        "Nonpositive or missing fare / total": 17
+      },
+      "sha256": "932ea2cb6a56f83c4389148ce73427b07a63106375b607a361cd107cf7a32042",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-09.parquet"
+    },
+    {
+      "month": "2025-10",
+      "raw_rows": 49416,
+      "included_rows": 43995,
+      "excluded_rows": 5421,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 43995,
+        "Payment is not card or cash": 5389,
+        "Pickup outside source month or missing": 21,
+        "Nonpositive or missing fare / total": 11
+      },
+      "sha256": "b124d57fb63fe610d085ce9ebef1528c082932313d86133a33d9c7a000883fe6",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-10.parquet"
+    },
+    {
+      "month": "2025-11",
+      "raw_rows": 46912,
+      "included_rows": 40935,
+      "excluded_rows": 5977,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 40935,
+        "Payment is not card or cash": 5943,
+        "Pickup outside source month or missing": 21,
+        "Nonpositive or missing fare / total": 13
+      },
+      "sha256": "efcd45635c7982aa7ac832e5922c2e5495ebb5ce44e35491fea58d63fa7eba05",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-11.parquet"
+    },
+    {
+      "month": "2025-12",
+      "raw_rows": 48236,
+      "included_rows": 41934,
+      "excluded_rows": 6302,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 41934,
+        "Payment is not card or cash": 6268,
+        "Pickup outside source month or missing": 26,
+        "Nonpositive or missing fare / total": 8
+      },
+      "sha256": "d1e9def5085c3be62dc8f827c9bbb6d32455b8ba69921d3e823d95435ab155fc",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-12.parquet"
+    },
+    {
+      "month": "2026-01",
+      "raw_rows": 40272,
+      "included_rows": 34497,
+      "excluded_rows": 5775,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 34497,
+        "Payment is not card or cash": 5745,
+        "Pickup outside source month or missing": 22,
+        "Nonpositive or missing fare / total": 8
+      },
+      "sha256": "b0b188cd9ded91a9dfc931d9250aaca09fe388355d87802422707c6fc14762e0",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-01.parquet"
+    },
+    {
+      "month": "2026-02",
+      "raw_rows": 37373,
+      "included_rows": 31641,
+      "excluded_rows": 5732,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 31641,
+        "Payment is not card or cash": 5713,
+        "Pickup outside source month or missing": 11,
+        "Nonpositive or missing fare / total": 8
+      },
+      "sha256": "2f7e3f379b2a14d675aed7eb9318a663dfb290eb11dbc66efbee581b63c3c962",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-02.parquet"
+    },
+    {
+      "month": "2026-03",
+      "raw_rows": 44208,
+      "included_rows": 37198,
+      "excluded_rows": 7010,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 37198,
+        "Payment is not card or cash": 6993,
+        "Pickup outside source month or missing": 9,
+        "Nonpositive or missing fare / total": 8
+      },
+      "sha256": "60c8bdfc0aa7826a2d6d2a6cca0f0e0dcb2d8aa7336212a45382794bb55b9cc0",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-03.parquet"
+    },
+    {
+      "month": "2026-04",
+      "raw_rows": 44238,
+      "included_rows": 37570,
+      "excluded_rows": 6668,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 37570,
+        "Payment is not card or cash": 6627,
+        "Nonpositive or missing fare / total": 38,
+        "Pickup outside source month or missing": 3
+      },
+      "sha256": "e8dd2a0afde3fe8be942dd638fe1d946f8edbe5b377cf6c1d645e1206b3c7662",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-04.parquet"
+    },
+    {
+      "month": "2026-05",
+      "raw_rows": 44921,
+      "included_rows": 38807,
+      "excluded_rows": 6114,
+      "source_columns": 21,
+      "exclusion_counts": {
+        "Included": 38807,
+        "Payment is not card or cash": 6073,
+        "Nonpositive or missing fare / total": 31,
+        "Pickup outside source month or missing": 10
+      },
+      "sha256": "15ff57840a1103d49298ad244492730ca4236b4de0d2758a689ded08bc332752",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-05.parquet"
+    },
+    {
+      "month": "2026-06",
+      "raw_rows": 44163,
+      "included_rows": 37363,
+      "excluded_rows": 6800,
+      "source_columns": 22,
+      "exclusion_counts": {
+        "Included": 37363,
+        "Payment is not card or cash": 6763,
+        "Nonpositive or missing fare / total": 24,
+        "Pickup outside source month or missing": 13
+      },
+      "sha256": "08e214dcb285cb5cecb183635080e817ca24f0c6491eb7d387513fbe38258f97",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-06.parquet"
+    },
+    {
+      "month": "2026-07",
+      "raw_rows": 41252,
+      "included_rows": 34465,
+      "excluded_rows": 6787,
+      "source_columns": 22,
+      "exclusion_counts": {
+        "Included": 34465,
+        "Payment is not card or cash": 6713,
+        "Nonpositive or missing fare / total": 58,
+        "Pickup outside source month or missing": 16
+      },
+      "sha256": "1e01084ab77643cc94e53ad7c30163dd7e8ef0be7b5bbf62bd45c19b7580ee87",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-07.parquet"
+    },
+    {
+      "month": "2026-08",
+      "raw_rows": 40687,
+      "included_rows": 34010,
+      "excluded_rows": 6677,
+      "source_columns": 22,
+      "exclusion_counts": {
+        "Included": 34010,
+        "Payment is not card or cash": 6584,
+        "Nonpositive or missing fare / total": 79,
+        "Pickup outside source month or missing": 14
+      },
+      "sha256": "73539b4c19d1fc7e00a3809b09f0c1704283cff50398a022d9a01282c310e538",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2026-08.parquet"
+    }
+  ],
+  "notes": "Pickup month matches source file; card/cash payment; positive fare and total. No deduplication or upper-value trimming. Nominal USD. 2026 partial."
+}

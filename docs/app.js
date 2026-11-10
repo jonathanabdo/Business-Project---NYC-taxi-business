@@ -1,45 +1,32 @@
 'use strict';
-const DATA=window.TAXI_DATA;
-const $=id=>document.getElementById(id);
-const number=new Intl.NumberFormat('en-US');
-const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
-const precise=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
-const short=v=>v>=1e6?'$'+(v/1e6).toFixed(2)+'m':v>=1000?'$'+(v/1000).toFixed(0)+'k':money.format(v);
-const months=[...new Set(DATA.rows.map(r=>r.pickup_month))].sort();
-const monthName=m=>new Date(m+'-15T12:00:00').toLocaleDateString('en-US',{month:'long',year:'numeric'});
-const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-months.forEach(m=>$('month').add(new Option(monthName(m),m)));
-[...new Set(DATA.rows.map(r=>r.pickup_borough))].sort().forEach(b=>$('borough').add(new Option(b,b)));
-$('datasetSize').textContent=number.format(DATA.meta.raw_rows)+' original trip records · '+DATA.meta.source_columns+' source fields across eight monthly files';
-$('quality').textContent=number.format(DATA.meta.included_rows)+' records are included; '+number.format(DATA.meta.excluded_rows)+' are excluded from charts. The project includes an audit by month and an inclusion flag for each prepared row.';
-let current=[];
-function total(rows){return rows.reduce((a,r)=>({trips:a.trips+r.trips,fare_usd:a.fare_usd+r.fare_usd,charges_usd:a.charges_usd+r.charges_usd}),{trips:0,fare_usd:0,charges_usd:0});}
-function render(){
- const selectedMonth=$('month').value,borough=$('borough').value;
- const rows=DATA.rows.filter(r=>(selectedMonth==='all'||r.pickup_month===selectedMonth)&&(borough==='all'||r.pickup_borough===borough));
- const sums=total(rows);
- $('fare').textContent=money.format(sums.fare_usd);$('fare').title=precise.format(sums.fare_usd);
- $('trips').textContent=number.format(sums.trips);$('average').textContent=sums.trips?precise.format(sums.fare_usd/sums.trips):'—';$('charges').textContent=money.format(sums.charges_usd);$('charges').title=precise.format(sums.charges_usd);
- const chosenMonths=selectedMonth==='all'?months:[selectedMonth];
- current=chosenMonths.map(m=>{const s=total(rows.filter(r=>r.pickup_month===m));return{month:m,...s,average:s.trips?s.fare_usd/s.trips:0,perDay:s.fare_usd/new Date(Number(m.slice(0,4)),Number(m.slice(5)),0).getDate()};});
- $('scope').textContent=selectedMonth==='all'?'January–August':monthName(selectedMonth);
- drawTrend(current);
- const groups={};rows.forEach(r=>{groups[r.pickup_zone]=(groups[r.pickup_zone]||0)+r.fare_usd;});
- const top=Object.entries(groups).sort((a,b)=>b[1]-a[1]).slice(0,5);
- $('zones').innerHTML=top.length?top.map(([name,value])=>`<div class="bar-row"><div class="bar-label"><span>${escapeHtml(name)}</span><b>${short(value)}</b></div><div class="track"><div class="fill" style="width:${100*value/top[0][1]}%"></div></div></div>`).join(''):'<p>No included trips in this selection.</p>';
- $('tableBody').innerHTML=current.map(r=>`<tr><td>${monthName(r.month)}</td><td>${number.format(r.trips)}</td><td>${precise.format(r.fare_usd)}</td><td>${r.trips?precise.format(r.average):'—'}</td><td>${precise.format(r.perDay)}</td></tr>`).join('');
- if(!sums.trips){$('insight').textContent='No included trips match these filters. Try another month or borough.';return;}
- if(current.length>1){const peak=current.reduce((a,b)=>a.fare_usd>b.fare_usd?a:b);const first=current[0],last=current.at(-1);const change=first.fare_usd?(last.fare_usd/first.fare_usd-1)*100:null;$('insight').textContent=monthName(peak.month)+' has the highest base-fare total in this selection ('+money.format(peak.fare_usd)+'). '+(change===null?'':`August’s total is ${Math.abs(change).toFixed(1)}% ${change>=0?'above':'below'} January’s. `)+'Use trip counts and average fares below to investigate the difference; this comparison alone does not establish a cause.';}
- else{$('insight').textContent=top[0][0]+' contributes '+(top[0][1]/sums.fare_usd*100).toFixed(1)+'% of base fares in this selection. Treat this as a place to investigate customer demand, not evidence that a marketing campaign will succeed.';}
-}
-function drawTrend(rows){
- const w=590,h=265,l=59,r=18,t=24,b=40,plotw=w-l-r,ploth=h-t-b,max=Math.max(...rows.map(x=>x.fare_usd),1)*1.18;
- const x=i=>rows.length===1?l+plotw/2:l+i*plotw/(rows.length-1),y=v=>t+ploth-v/max*ploth;
- let svg=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="chartTitle chartDesc"><title id="chartTitle">Recorded base fares by month</title><desc id="chartDesc">${rows.map(v=>monthName(v.month)+': '+precise.format(v.fare_usd)).join('; ')}</desc>`;
- for(let i=0;i<=4;i++){let value=max*i/4,Y=y(value);svg+=`<line x1="${l}" x2="${w-r}" y1="${Y}" y2="${Y}" stroke="#e4e9e1"/><text x="${l-10}" y="${Y+4}" text-anchor="end" fill="#526a63" font-size="11">${short(value)}</text>`;}
- if(rows.length>1){const points=rows.map((v,i)=>`${x(i)},${y(v.fare_usd)}`).join(' ');svg+=`<polygon points="${l},${y(0)} ${points} ${w-r},${y(0)}" fill="#d9ecde" opacity=".6"/><polyline points="${points}" fill="none" stroke="#147569" stroke-width="3"/>`;}
- rows.forEach((v,i)=>{svg+=`<circle cx="${x(i)}" cy="${y(v.fare_usd)}" r="4" fill="#147569"><title>${monthName(v.month)}: ${precise.format(v.fare_usd)}</title></circle><text x="${x(i)}" y="${h-13}" text-anchor="middle" font-size="11" fill="#526a63">${monthName(v.month).slice(0,3)}</text>`;});$('trend').innerHTML=svg+'</svg>';
-}
-$('month').addEventListener('change',render);$('borough').addEventListener('change',render);$('reset').addEventListener('click',()=>{$('month').value='all';$('borough').value='all';render();});
-$('download').addEventListener('click',()=>{let csv='month,pickup_borough,trips,base_fares_usd,average_base_fare_usd,base_fares_per_calendar_day_usd\n'+current.map(r=>[r.month,$('borough').value,r.trips,r.fare_usd.toFixed(2),r.average.toFixed(2),r.perDay.toFixed(2)].join(',')).join('\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='taxi_business_selection.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
-render();
+const D=window.TAXI_DATA,$=id=>document.getElementById(id),N=new Intl.NumberFormat('en-US'),M=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}),P=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const label=m=>new Date(m+'-15T12:00:00').toLocaleDateString('en-US',{month:'short',year:'numeric'}),days=m=>new Date(+m.slice(0,4),+m.slice(5),0).getDate();
+const years=D.meta.years.map(String),fields=['trips','fare_cents','charges_cents','tips_cents'];
+function sum(rows){let a=Object.fromEntries(fields.map(k=>[k,0]));rows.forEach(r=>fields.forEach(k=>a[k]+=r[k]));return a;}
+function select(parent,id,title,opts,value,fn){const l=document.createElement('label');l.textContent=title;const s=document.createElement('select');s.id=id;opts.forEach(([v,t])=>s.add(new Option(t,v)));s.value=value;s.addEventListener('change',fn);l.append(s);$(parent).append(l);return s;}
+const yearOpts=[['all','All years'],...years.map(y=>[y,y==='2026'?'2026 (Jan–Aug)':y])];
+function setup(prefix,type,render,monthly=false){select(prefix+'Filters',prefix+'Year','Year',monthly?yearOpts.slice(1):yearOpts,monthly?'2026':'all',render);select(prefix+'Filters',prefix+'Borough',type==='dropoff'?'Drop-off borough':'Pickup borough',[['all','All boroughs'],...[...new Set(D[type].map(r=>r.borough))].sort().map(b=>[b,b])],'all',render);}
+function chosen(prefix,type){return D[type].filter(r=>($(prefix+'Year').value==='all'||r.month.startsWith($(prefix+'Year').value))&&($(prefix+'Borough').value==='all'||r.borough===$(prefix+'Borough').value));}
+function chosenMonths(prefix){return D.meta.months.filter(m=>$(prefix+'Year').value==='all'||m.startsWith($(prefix+'Year').value));}
+function monthlyRows(prefix){const rows=chosen(prefix,'pickup');return chosenMonths(prefix).map(m=>({month:m,...sum(rows.filter(r=>r.month===m))}));}
+function avg(s){return s.trips?s.fare_cents/100/s.trips:null;}
+function renderKpi(){const s=sum(chosen('kpi','pickup'));$('fare').textContent=M.format(s.fare_cents/100);$('fare').title=P.format(s.fare_cents/100);$('charges').textContent=M.format(s.charges_cents/100);$('charges').title=P.format(s.charges_cents/100);$('trips').textContent=N.format(s.trips);$('average').textContent=s.trips?P.format(avg(s)):'—';$('kpiScope').textContent=($('kpiYear').value==='all'?'Combined totals · January 2020–August 2026':$('kpiYear').selectedOptions[0].text)+' · '+$('kpiBorough').selectedOptions[0].text;}
+function chart(id,rows,currency=true){const w=600,h=300,l=66,r=22,t=30,b=44,max=Math.max(1,...rows.map(r=>r.value))*1.16,pw=w-l-r,ph=h-t-b,x=i=>l+(i+.5)*pw/rows.length,y=v=>t+ph-v/max*ph,fmt=v=>currency?(v>=1e6?'$'+(v/1e6).toFixed(1)+'m':v>=1000?'$'+(v/1000).toFixed(0)+'k':P.format(v)):(v>=1e6?(v/1e6).toFixed(1)+'m':v>=1000?(v/1000).toFixed(0)+'k':N.format(v));
+let s=`<svg viewBox="0 0 ${w} ${h}" role="img"><title>${esc(rows.map(r=>r.label+': '+(currency?P.format(r.value):N.format(r.value))).join('; '))}</title>`;
+for(let i=0;i<5;i++){const v=max*i/4;s+=`<line x1="${l}" x2="${w-r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e9e1"/><text x="${l-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#526a63">${fmt(v)}</text>`;}
+rows.forEach((a,i)=>{s+=`<rect x="${x(i)-pw/rows.length*.31}" y="${y(a.value)}" width="${pw/rows.length*.62}" height="${ph*a.value/max}" rx="3" fill="${a.partial?'#92b2a2':'#147569'}"><title>${esc(a.label)}: ${currency?P.format(a.value):N.format(a.value)}</title></rect><text x="${x(i)}" y="${h-18}" text-anchor="middle" font-size="11" fill="#526a63">${esc(a.label)}</text>`;});$(id).innerHTML=s+'</svg>';}
+function renderMonthly(){chart('monthlyChart',monthlyRows('monthly').map(r=>({label:label(r.month).split(' ')[0],value:r.fare_cents/100})));}
+function renderAnnual(){const borough=$('annualBorough').value,metric=$('annualMetric').value,matched=$('annualPeriod').value==='matched';const rows=D.pickup.filter(r=>(borough==='all'||r.borough===borough)&&(!matched||+r.month.slice(5)<=8));chart('annualChart',years.map(y=>{const s=sum(rows.filter(r=>r.month.startsWith(y)));return{label:y+(y==='2026'&&!matched?'*':''),value:metric==='average'?(avg(s)||0):metric==='trips'?s.trips:s[metric]/100,partial:y==='2026'&&!matched};}),metric!=='trips');$('annualNote').textContent=matched?'January–August in every year: comparable calendar coverage.':'* 2026 contains January–August only; other years contain all 12 months.';}
+function renderZones(type){const rows=chosen(type,type);let groups=new Map();rows.forEach(r=>{if(!groups.has(r.zone_id))groups.set(r.zone_id,{name:r.zone,borough:r.borough,value:0,trips:0});const g=groups.get(r.zone_id);g.value+=r.fare_cents;g.trips+=r.trips;});const top=[...groups.values()].sort((a,b)=>b.value-a.value).slice(0,5);$(type+'Bars').innerHTML=top.length?top.map(r=>`<div class="bar-row"><div class="bar-label"><span>${esc(r.name)}<br><small>${esc(r.borough)} · ${N.format(r.trips)} trips</small></span><b title="${P.format(r.value/100)}">${M.format(r.value/100)}</b></div><div class="track"><div class="fill" style="width:${r.value/top[0].value*100}%"></div></div></div>`).join(''):'<p>No included trips in this selection.</p>';}
+let tableRows=[];
+function cells(r,nDays,name){return`<tr><td>${name}</td><td>${N.format(r.trips)}</td><td>${P.format(r.fare_cents/100)}</td><td>${r.trips?P.format(avg(r)):'—'}</td><td>${P.format(r.charges_cents/100)}</td><td>${P.format(r.tips_cents/100)}</td><td>${P.format(r.fare_cents/100/nDays)}</td></tr>`;}
+function renderTable(){const rows=chosen('table','pickup');const yy=$('tableYear').value==='all'?years:[$('tableYear').value];tableRows=yy.map(year=>{const mm=D.meta.months.filter(m=>m.startsWith(year));return{year,coverage:year==='2026'?'Jan–Aug':'Jan–Dec',calendar_days:mm.reduce((a,m)=>a+days(m),0),...sum(rows.filter(r=>r.month.startsWith(year)))};});$('tableBody').innerHTML=tableRows.map(r=>cells(r,r.calendar_days,r.year+' · '+r.coverage)).join('');$('tableTotal').innerHTML=cells(sum(tableRows),tableRows.reduce((a,r)=>a+r.calendar_days,0),'Selection total');$('tableScope').textContent=tableRows.length+' yearly rows · '+$('tableBorough').selectedOptions[0].text+' · 2026 covers January–August only. Filters affect only this table.';}
+setup('kpi','pickup',renderKpi);setup('monthly','pickup',renderMonthly,true);setup('pickup','pickup',()=>renderZones('pickup'));setup('dropoff','dropoff',()=>renderZones('dropoff'));setup('table','pickup',renderTable);
+select('annualFilters','annualMetric','Metric',[['fare_cents','Base fares'],['charges_cents','Passenger charges'],['trips','Trip count'],['average','Average base fare']],'fare_cents',renderAnnual);
+select('annualFilters','annualPeriod','Coverage',[['full','All available months'],['matched','Jan–Aug each year']],'full',renderAnnual);
+select('annualFilters','annualBorough','Pickup borough',[['all','All boroughs'],...[...new Set(D.pickup.map(r=>r.borough))].sort().map(b=>[b,b])],'all',renderAnnual);
+$('download').addEventListener('click',()=>{const rows=tableRows.map(r=>[r.year,r.coverage,$('tableBorough').value,r.trips,(r.fare_cents/100).toFixed(2),avg(r)?.toFixed(2)||'',(r.charges_cents/100).toFixed(2),(r.tips_cents/100).toFixed(2),(r.fare_cents/100/r.calendar_days).toFixed(2)]);const csv='year,coverage,pickup_borough,trips,base_fares_usd,average_base_fare_usd,passenger_charges_usd,recorded_tips_usd,base_fares_per_calendar_day_usd\n'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv'})),a=document.createElement('a');a.href=url;a.download='taxi_yearly_'+$('tableYear').value+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+$('datasetSize').textContent=N.format(D.meta.raw_rows)+' original trip records across '+D.meta.monthly_files+' monthly files.';
+$('quality').textContent=N.format(D.meta.included_rows)+' records included; '+N.format(D.meta.excluded_rows)+' excluded. The source manifest provides counts for each month.';
+renderKpi();renderMonthly();renderAnnual();renderZones('pickup');renderZones('dropoff');renderTable();
